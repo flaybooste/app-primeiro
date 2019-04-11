@@ -1,3 +1,15 @@
-<p>
-  primeiro-component works!
-</p>
+<ul>
+	<li *ngFor="let item of filmes"><a href="#">{{ item }}</a></li>
+</ul>
+<div class="form-inline">
+	<div class="form-group mb-2">
+		<input type="text" class="form-control-plaintext" readonly value="CEP">
+	</div>
+	<div class="form-group mb-2">
+		<input [(ngModel)]="texto" class="form-control mb-2" type="text" required>
+	</div>
+	<div class="form-group mb-2">
+		<button class="btn btn-info mb-2" (click)="alerta(texto)">cep</button>
+	</div>
+</div>
+<h6 class="h6" id="p1"> </h6>
