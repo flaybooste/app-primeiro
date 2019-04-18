@@ -1,0 +1,21 @@
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatPaginator, MatSort } from '@angular/material';
+import { MyTableDataSource } from './my-table-datasource';
+
+@Component({
+  selector: 'app-my-table',
+  templateUrl: './my-table.component.html',
+  styleUrls: ['./my-table.component.css']
+})
+export class MyTableComponent implements AfterViewInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  dataSource: MyTableDataSource;
+
+  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
+  displayedColumns = ['id', 'name'];
+
+  ngAfterViewInit() {
+    this.dataSource = new MyTableDataSource(this.paginator, this.sort);
+  }
+}
