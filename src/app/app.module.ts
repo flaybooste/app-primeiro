@@ -37,7 +37,8 @@ import { MyTableComponent } from './my-table/my-table.component';
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatSortModule
+    MatSortModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent, PrimeiroComponentComponent]
